@@ -34,12 +34,11 @@ public:
         if(s.empty()){
             return true;
         }
-        std::vector<char> data(s.begin(), s.end());
-        if (data.size() < 2) {
+        if (s.size() < 2) {
             return false;
         }
         std::stack<char> stack;
-        for (auto &item : data) {
+        for (auto &item : s) {
             try {
                // printf("item: %c\n", item);
 //                for (std::stack<char> dump = stack; !dump.empty(); dump.pop())
