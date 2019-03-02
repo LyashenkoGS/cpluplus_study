@@ -1,9 +1,16 @@
-#include "gtest/gtest.h"
-#include "example.h"
 
-TEST(example, subtract)
-{
-    double res;
-    res = subtract_numbers(1.0, 2.0);
-    ASSERT_NEAR(res, -1.0, 1.0e-11);
+#include "gtest/gtest.h"
+#include "Solution.cpp"
+
+
+
+TEST(example, subtract) {
+    Solution s;
+    ASSERT_EQ(true, s.isValid("()"));
+    ASSERT_EQ(true, s.isValid("()[]{}"));
+    ASSERT_EQ(false, s.isValid("(]"));
+     ASSERT_EQ(false, s.isValid("([)]"));
+    ASSERT_EQ(true, s.isValid("{[]}"));
 }
+
+
